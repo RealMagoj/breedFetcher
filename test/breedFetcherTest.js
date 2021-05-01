@@ -15,11 +15,11 @@ describe('fetchBreedDescription', () => {
   });
   it('returns breed not found for an invalid breed, via callback', (done) => {
     fetchBreedDescription('dog', (err, desc) => {
-      assert.equal(err, null);
+      assert.equal(desc, null);
 
-      const expectedDesc = "Breed not found.";
+      const expectedErr = "Breed not found.";
 
-      assert.equal(expectedDesc, desc.trim());
+      assert.equal(expectedErr, err.trim());
 
       done();
     });
